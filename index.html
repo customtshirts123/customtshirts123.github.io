@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -60,21 +60,21 @@ nav a:hover {
     display:flex;
     justify-content:center;
     align-items:center;
-    gap:40px;
+    gap:30px;
     flex-wrap:wrap;
     margin-top:25px;
 }
 
 .home-images img.logo {
-    width:550px; /* large, matches poster height */
-    max-width:45%;
+    width:160px;  /* smaller than poster */
+    height:auto;
 }
 
 .home-images img.poster {
-    width:600px;
+    width:400px;  /* main focus */
     max-width:90%;
     border-radius:12px;
-    box-shadow:0 15px 35px rgba(0,0,0,0.2);
+    box-shadow:0 12px 30px rgba(0,0,0,0.2);
 }
 
 /* HERO */
@@ -179,10 +179,11 @@ footer {
     font-size:14px;
 }
 
+/* RESPONSIVE */
 @media(max-width:768px){
-    .home-images { flex-direction:column; }
-    .home-images img.logo { max-width:70%; }
-    .home-images img.poster { max-width:90%; }
+    .home-images { flex-direction: column; }
+    .home-images img.logo { width:150px; }
+    .home-images img.poster { width:90%; margin:20px 0; }
 }
 </style>
 </head>
