@@ -3,183 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kotchin Clothing | Custom T-Shirts</title>
-
+<title>Kotchin Clothing</title>
 <style>
 html { scroll-behavior: smooth; }
+body { margin:0; font-family: Arial, Helvetica, sans-serif; background:#f4f4f4; color:#333; }
 
-body {
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:#f4f4f4;
-    color:#333;
+/* --- Landing Page Styles --- */
+#landing {
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  height:100vh; text-align:center;
+  background:#f4f4f4;
 }
 
-/* HEADER */
-header {
-    background:#000;
-    color:#fff;
-    text-align:center;
-    padding:35px 20px;
+#landing img.logo {
+  width:250px; max-width:80%; margin-bottom:25px;
 }
 
-header h1 {
-    margin:0;
-    font-size:32px;
+button.enter-btn {
+  padding:15px 35px; font-size:18px; background:#ff9900; color:#fff;
+  border:none; border-radius:10px; cursor:pointer; transition:0.3s;
 }
 
-/* NAVIGATION */
-nav {
-    background:#111;
-    text-align:center;
-    padding:14px;
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
+button.enter-btn:hover { background:#e68a00; }
 
-nav a {
-    color:#fff;
-    margin:0 20px;
-    text-decoration:none;
-    font-weight:bold;
-}
+/* --- Main Site Styles --- */
+#main-site { display:none; }
 
-nav a:hover {
-    color:#ff9900;
-}
+header { background:#000; color:#fff; text-align:center; padding:35px 20px; }
+header h1 { margin:0; font-size:32px; }
+nav { background:#111; text-align:center; padding:14px; position:sticky; top:0; z-index:1000; }
+nav a { color:#fff; margin:0 20px; text-decoration:none; font-weight:bold; }
+nav a:hover { color:#ff9900; }
 
-/* HOME SECTION */
-.home {
-    background:#fff;
-    padding:70px 20px;
-    text-align:center;
-}
+.home { background:#fff; padding:70px 20px; text-align:center; }
+.home-images { display:flex; justify-content:center; align-items:center; gap:30px; flex-wrap:wrap; margin-top:25px; }
+.home-images img.logo { width:160px; height:auto; }
+.home-images img.poster { width:400px; max-width:90%; border-radius:12px; box-shadow:0 12px 30px rgba(0,0,0,0.2); }
 
-.home-images {
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:30px;
-    flex-wrap:wrap;
-    margin-top:25px;
-}
+.hero { background:#ff9900; color:#fff; padding:70px 20px; text-align:center; }
+.hero h2 { font-size:36px; margin-bottom:10px; }
+.hero p { font-size:20px; }
 
-.home-images img.logo {
-    width:160px;  /* smaller than poster */
-    height:auto;
-}
+.products { padding:70px 20px; display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
+.product { background:#fff; width:270px; padding:20px; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.15); text-align:center; transition:0.3s; }
+.product:hover { transform:translateY(-8px); }
+.product img { width:100%; border-radius:10px; margin-bottom:10px; }
 
-.home-images img.poster {
-    width:400px;  /* main focus */
-    max-width:90%;
-    border-radius:12px;
-    box-shadow:0 12px 30px rgba(0,0,0,0.2);
-}
+.pricing { background:#fff; max-width:1150px; margin:50px auto; padding:50px 25px; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.15); }
+.pricing h2 { text-align:center; margin-bottom:30px; }
+table { width:100%; border-collapse:collapse; margin-bottom:40px; }
+th, td { border:1px solid #ddd; padding:12px; text-align:center; }
+th { background:#ff9900; color:#fff; }
+tr:nth-child(even) { background:#f9f9f9; }
 
-/* HERO */
-.hero {
-    background:#ff9900;
-    color:#fff;
-    padding:70px 20px;
-    text-align:center;
-}
+.contact { background:#fff; max-width:750px; margin:50px auto; padding:50px 20px; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.15); text-align:center; }
 
-.hero h2 {
-    font-size:36px;
-    margin-bottom:10px;
-}
+footer { background:#000; color:#fff; text-align:center; padding:25px; margin-top:40px; font-size:14px; }
 
-.hero p {
-    font-size:20px;
-}
-
-/* PRODUCTS */
-.products {
-    padding:70px 20px;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:30px;
-}
-
-.product {
-    background:#fff;
-    width:270px;
-    padding:20px;
-    border-radius:14px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.15);
-    text-align:center;
-    transition:0.3s;
-}
-
-.product:hover {
-    transform:translateY(-8px);
-}
-
-.product img {
-    width:100%;
-    border-radius:10px;
-    margin-bottom:10px;
-}
-
-/* PRICING */
-.pricing {
-    background:#fff;
-    max-width:1150px;
-    margin:50px auto;
-    padding:50px 25px;
-    border-radius:14px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.15);
-}
-
-.pricing h2 {
-    text-align:center;
-    margin-bottom:30px;
-}
-
-table {
-    width:100%;
-    border-collapse:collapse;
-    margin-bottom:40px;
-}
-
-th, td {
-    border:1px solid #ddd;
-    padding:12px;
-    text-align:center;
-}
-
-th {
-    background:#ff9900;
-    color:#fff;
-}
-
-tr:nth-child(even) {
-    background:#f9f9f9;
-}
-
-/* CONTACT */
-.contact {
-    background:#fff;
-    max-width:750px;
-    margin:50px auto;
-    padding:50px 20px;
-    border-radius:14px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.15);
-    text-align:center;
-}
-
-footer {
-    background:#000;
-    color:#fff;
-    text-align:center;
-    padding:25px;
-    margin-top:40px;
-    font-size:14px;
-}
-
-/* RESPONSIVE */
 @media(max-width:768px){
     .home-images { flex-direction: column; }
     .home-images img.logo { width:150px; }
@@ -187,8 +67,17 @@ footer {
 }
 </style>
 </head>
-
 <body>
+
+<!-- Landing Page -->
+<div id="landing">
+<img src="logo.png" class="logo" alt="Kotchin Clothing Logo">
+<h2>Click to Enter</h2>
+<button class="enter-btn" onclick="enterSite()">Enter Site</button>
+</div>
+
+<!-- Main Site -->
+<div id="main-site">
 
 <header>
 <h1>Kotchin Clothing</h1>
@@ -266,7 +155,6 @@ footer {
 </table>
 
 <p><strong>*Profit figures are estimates based on resale price.</strong></p>
-
 </div>
 </section>
 
@@ -283,6 +171,15 @@ footer {
 <footer>
 © 2026 Kotchin Clothing
 </footer>
+</div>
+
+<script>
+function enterSite() {
+    document.getElementById('landing').style.display='none';
+    document.getElementById('main-site').style.display='block';
+    window.scrollTo(0,0);
+}
+</script>
 
 </body>
 </html>
