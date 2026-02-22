@@ -3,19 +3,39 @@
 <head>
     <title>Kotchin Clothing</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; margin:0; background-color:#f4f4f4; }
-        header { background:black; color:white; padding:20px; text-align:center; }
-        nav { text-align:center; background:#222; padding:10px; }
+        body { font-family: 'Montserrat', sans-serif; margin:0; background-color:#f4f4f4; }
+        header { background: linear-gradient(90deg,#ff6600,#ff9933); color:white; padding:30px; text-align:center; }
+        header h2 { margin:0; font-size:2.5em; }
+        header p { margin:5px 0 0; font-size:1.2em; }
+
+        nav { text-align:center; background:#222; padding:12px; }
         nav a { color:white; text-decoration:none; margin:0 15px; font-weight:bold; }
-        .hero { text-align:center; padding:50px 20px; background:#fff; }
-        .hero h1 { font-size:40px; }
-        .products { display:flex; flex-wrap:wrap; justify-content:center; padding:20px; }
-        .product { background:white; margin:15px; padding:20px; width:250px; box-shadow:0 4px 8px rgba(0,0,0,0.1); text-align:center; }
-        .product img { width:100%; }
-        button { background:black; color:white; border:none; padding:10px 15px; cursor:pointer; margin-top:10px; }
-        button:hover { background:#444; }
-        footer { background:black; color:white; text-align:center; padding:15px; margin-top:30px; }
+        nav a:hover { text-decoration:underline; }
+
+        .hero { text-align:center; padding:60px 20px; background:url('https://images.unsplash.com/photo-1616627892243-01d53d7a95db?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat; color:white; }
+        .hero h1 { font-size:3em; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); }
+        .hero p { font-size:1.5em; text-shadow: 1px 1px 3px rgba(0,0,0,0.6); }
+        .hero button { background:#ff6600; border:none; color:white; padding:15px 25px; font-size:1em; cursor:pointer; border-radius:10px; margin-top:20px; transition: background 0.3s; }
+        .hero button:hover { background:#e65c00; }
+
+        .products { display:flex; flex-wrap:wrap; justify-content:center; padding:40px 20px; }
+        .product { background:white; margin:20px; padding:20px; width:250px; box-shadow:0 8px 16px rgba(0,0,0,0.2); text-align:center; border-radius:12px; transition: transform 0.3s; }
+        .product:hover { transform: translateY(-5px); box-shadow:0 12px 24px rgba(0,0,0,0.3); }
+        .product img { width:100%; height:auto; border-radius:8px; }
+        .product h3 { margin:10px 0 5px; font-size:1.2em; }
+        .product p { font-size:1.1em; font-weight:bold; margin:5px 0; }
+        .product button { background:#ff6600; color:white; border:none; padding:10px 15px; cursor:pointer; border-radius:8px; transition: background 0.3s; }
+        .product button:hover { background:#e65c00; }
+
+        .pricing-info { background:#fff; padding:40px 20px; margin:20px auto; max-width:1000px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+        .pricing-info h2, .pricing-info h3 { text-align:center; }
+        .pricing-info table { width:100%; border-collapse: collapse; margin: 20px 0; }
+        .pricing-info table, .pricing-info th, .pricing-info td { border:1px solid #000; }
+        .pricing-info th, .pricing-info td { padding:8px; text-align:center; }
+
+        footer { background:black; color:white; text-align:center; padding:20px; margin-top:30px; }
     </style>
 </head>
 <body>
@@ -39,23 +59,67 @@
 
 <section class="products">
     <div class="product">
-        <img src="https://via.placeholder.com/250" alt="Tshirt 1">
+        <img src="https://images.unsplash.com/photo-1602810319501-2baf01154f05?auto=format&fit=crop&w=250&q=80" alt="Street Vibes Tee">
         <h3>Street Vibes Tee</h3>
-        <p>$25</p>
+        <p>£25</p>
         <button>Buy Now</button>
     </div>
     <div class="product">
-        <img src="https://via.placeholder.com/250" alt="Tshirt 2">
+        <img src="https://images.unsplash.com/photo-1574549363531-877a75d3a8be?auto=format&fit=crop&w=250&q=80" alt="Minimal Logo Tee">
         <h3>Minimal Logo Tee</h3>
-        <p>$22</p>
+        <p>£22</p>
         <button>Buy Now</button>
     </div>
     <div class="product">
-        <img src="https://via.placeholder.com/250" alt="Tshirt 3">
+        <img src="https://images.unsplash.com/photo-1562158073-9c418220c110?auto=format&fit=crop&w=250&q=80" alt="Custom Graphic Tee">
         <h3>Custom Graphic Tee</h3>
-        <p>$30</p>
+        <p>£30</p>
         <button>Buy Now</button>
     </div>
+</section>
+
+<section class="pricing-info">
+    <h2>Pricing & Info</h2>
+    <p>Thank you for your interest in having your T-shirts made! I’m excited to help bring your designs to life.</p>
+    <p>Your order includes:</p>
+    <ul>
+        <li>Soft cotton T-shirts</li>
+        <li>High-quality DTF printing</li>
+        <li>Digital design work: upscaling images, resizing files, and preparing them for printing</li>
+        <li>Logo options: we can either design a logo for you or you can provide your own</li>
+        <li>Handmade with love — not mass-produced in a factory, giving each shirt a personal, artisanal touch</li>
+    </ul>
+    <p>Below is a summary of pricing and potential earnings if shirts are resold at £12 or £15.</p>
+
+    <h3>Client-Facing Pricing — Medium Front Design</h3>
+    <table>
+        <tr>
+            <th>Quantity</th>
+            <th>Price per Shirt (£)</th>
+            <th>You Pay (£)</th>
+            <th>Potential Earnings (£12)</th>
+            <th>Potential Earnings (£15)</th>
+        </tr>
+        <tr><td>10</td><td>10.00</td><td>100</td><td>20</td><td>50</td></tr>
+        <tr><td>20</td><td>9.50</td><td>190</td><td>50</td><td>110</td></tr>
+        <tr><td>50</td><td>9.00</td><td>450</td><td>150</td><td>300</td></tr>
+        <tr><td>100</td><td>8.00</td><td>800</td><td>400</td><td>700</td></tr>
+    </table>
+
+    <h3>Client-Facing Pricing — Full Front Design</h3>
+    <table>
+        <tr>
+            <th>Quantity</th>
+            <th>Price per Shirt (£)</th>
+            <th>You Pay (£)</th>
+            <th>Potential Earnings (£12)</th>
+            <th>Potential Earnings (£15)</th>
+        </tr>
+        <tr><td>10</td><td>11.00</td><td>110</td><td>14</td><td>40</td></tr>
+        <tr><td>20</td><td>10.50</td><td>210</td><td>30</td><td>90</td></tr>
+        <tr><td>50</td><td>10.00</td><td>500</td><td>100</td><td>250</td></tr>
+        <tr><td>100</td><td>9.00</td><td>900</td><td>300</td><td>600</td></tr>
+    </table>
 </section>
 
 <footer>
