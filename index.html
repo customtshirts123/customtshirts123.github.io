@@ -1,50 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Kotchin Clothing - Custom T-shirts</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body { font-family: Arial, sans-serif; margin:0; background-color:#f4f4f4; }
-        header { background: black; color:white; padding:20px; text-align:center; }
-        header h2 { margin:0; font-size:2em; }
-        header p { margin:5px 0 0; font-size:1.2em; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kotchin Clothing - Custom T-shirts</title>
+<style>
+    /* Reset & body */
+    body { margin:0; font-family: 'Arial', sans-serif; background:#f4f4f4; color:#333; line-height:1.6; }
+    a { color:#ff9933; text-decoration:none; }
+    a:hover { text-decoration:underline; }
 
-        nav { text-align:center; background:#222; padding:12px; position: sticky; top:0; z-index:1000; }
-        nav a { color:white; text-decoration:none; margin:0 15px; font-weight:bold; }
-        nav a:hover { text-decoration:underline; }
+    /* Header */
+    header { background:#111; color:#fff; padding:30px 20px; text-align:center; }
+    header h1 { margin:0; font-size:2.5em; letter-spacing:1px; }
+    header p { margin:5px 0 0; font-size:1.2em; }
 
-        .home { text-align:center; padding:40px 20px; background:#fff; }
-        .home img { width:100%; max-width:700px; border-radius:8px; margin-bottom:20px; }
+    /* Navigation */
+    nav { background:#222; text-align:center; padding:12px; position:sticky; top:0; z-index:1000; }
+    nav a { color:#fff; margin:0 18px; font-weight:bold; font-size:1em; display:inline-block; }
+    nav a:hover { color:#ff9933; }
 
-        .hero { text-align:center; padding:30px 20px; background:#ff9933; color:white; }
-        .hero h1 { font-size:2.5em; }
-        .hero p { font-size:1.2em; }
+    /* Home section */
+    #home { background:#fff; padding:60px 20px; text-align:center; }
+    .home-images { display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:30px; margin-top:20px; }
+    .home-images img { border-radius:12px; box-shadow:0 8px 16px rgba(0,0,0,0.15); }
+    .home-images img.logo { max-width:180px; }
+    .home-images img.poster { max-width:700px; width:100%; }
 
-        .products { display:flex; flex-wrap:wrap; justify-content:center; padding:40px 20px; }
-        .product { background:white; margin:20px; padding:20px; width:280px; box-shadow:0 8px 16px rgba(0,0,0,0.2); text-align:center; border-radius:12px; transition: transform 0.3s; }
-        .product:hover { transform: translateY(-5px); box-shadow:0 12px 24px rgba(0,0,0,0.3); }
-        .product img { width:100%; height:auto; border-radius:8px; }
-        .product h3 { margin:10px 0 5px; font-size:1.2em; }
-        .product p { font-size:1em; margin:5px 0; }
+    /* Hero */
+    .hero { background:#ff9933; color:#fff; text-align:center; padding:60px 20px; }
+    .hero h2 { font-size:2.5em; margin-bottom:10px; }
+    .hero p { font-size:1.4em; margin-bottom:20px; }
+    .hero button { background:#111; color:#fff; border:none; padding:12px 25px; font-size:1.1em; cursor:pointer; border-radius:8px; transition:0.3s; }
+    .hero button:hover { background:#333; }
 
-        .pricing-info { background:#fff; padding:40px 20px; margin:20px auto; max-width:1000px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); text-align:center; }
-        .pricing-info h2 { text-align:center; margin-bottom:20px; }
-        .pricing-info table { width:100%; border-collapse: collapse; margin-bottom:20px; }
-        .pricing-info th, .pricing-info td { border:1px solid #ccc; padding:8px; text-align:center; }
-        .pricing-info th { background:#eee; }
+    /* Products */
+    .products { display:flex; flex-wrap:wrap; justify-content:center; gap:25px; padding:50px 20px; }
+    .product { background:#fff; width:260px; padding:20px; text-align:center; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.12); transition: transform 0.3s, box-shadow 0.3s; }
+    .product:hover { transform:translateY(-5px); box-shadow:0 12px 24px rgba(0,0,0,0.18); }
+    .product img { width:100%; border-radius:8px; margin-bottom:15px; }
+    .product h3 { margin:10px 0 5px; font-size:1.2em; }
+    .product p { margin:5px 0; }
 
-        .contact { background:white; padding:40px 20px; margin:20px auto; max-width:800px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
-        .contact h2 { text-align:center; }
-        .contact p { font-size:1.1em; margin:10px 0; }
+    /* Pricing */
+    .pricing-info { background:#fff; padding:50px 20px; margin:30px auto; max-width:1000px; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.12); }
+    .pricing-info h2 { text-align:center; margin-bottom:25px; font-size:2em; }
+    .pricing-info h3 { margin-top:30px; margin-bottom:10px; font-size:1.3em; }
+    .pricing-info table { width:100%; border-collapse: collapse; }
+    .pricing-info th, .pricing-info td { border:1px solid #ddd; padding:10px; text-align:center; }
+    .pricing-info th { background:#ff9933; color:#fff; }
+    .pricing-info tr:nth-child(even) { background:#f9f9f9; }
 
-        footer { background:black; color:white; text-align:center; padding:20px; margin-top:30px; }
-    </style>
+    /* Contact */
+    .contact { background:#fff; padding:50px 20px; margin:30px auto; max-width:800px; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.12); text-align:center; }
+    .contact h2 { margin-bottom:20px; font-size:2em; }
+    .contact p { margin:10px 0; font-size:1.1em; }
+
+    /* Footer */
+    footer { background:#111; color:#fff; text-align:center; padding:20px; margin-top:30px; font-size:0.9em; }
+
+    /* Responsive */
+    @media(max-width:768px){
+        .home-images { flex-direction:column; }
+        .home-images img.poster, .home-images img.logo { max-width:90%; }
+        .products { gap:15px; }
+    }
+</style>
 </head>
 <body>
 
 <header>
-    <h2>Kotchin Clothing</h2>
-    <p>Handmade Custom T-shirts — small or large orders welcome</p>
+    <h1>Kotchin Clothing</h1>
+    <p>Custom T-shirts — Handmade, small or large orders welcome</p>
 </header>
 
 <nav>
@@ -54,58 +81,66 @@
     <a href="#contact">Contact</a>
 </nav>
 
-<section id="home" class="home">
-    <img src="poster.jpg" alt="Custom Poster">
-    <p>Welcome! Create your own custom T-shirts with your design, logo, or text. From £8 per shirt.</p>
+<!-- Home Section -->
+<section id="home">
+    <h2>Welcome to Kotchin Clothing</h2>
+    <p>Custom T-shirts, handmade with love — small or large orders welcome!</p>
+    <div class="home-images">
+        <img src="logo.png" alt="Logo" class="logo">
+        <img src="poster.jpg" alt="Custom Poster" class="poster">
+    </div>
 </section>
 
+<!-- Hero Section -->
 <section class="hero">
-    <h1>Premium Custom T-Shirts</h1>
-    <p>Your style. Your statement.</p>
+    <h2>Custom T-Shirts From £8</h2>
+    <p>Your design, any logo, any text</p>
+    <button onclick="alert('Contact Oliver for orders!')">Contact Us</button>
 </section>
 
+<!-- Products Section -->
 <section id="products" class="products">
     <div class="product">
         <img src="shirt1.jpg" alt="T-shirt 1">
         <h3>Custom T-shirt</h3>
-        <p>From £8 per shirt</p>
+        <p>From £8 per T-shirt</p>
         <p>Handmade with love</p>
     </div>
     <div class="product">
         <img src="shirt2.jpg" alt="T-shirt 2">
         <h3>Custom T-shirt</h3>
-        <p>From £8 per shirt</p>
+        <p>From £8 per T-shirt</p>
         <p>Handmade with love</p>
     </div>
     <div class="product">
         <img src="shirt3.jpg" alt="T-shirt 3">
         <h3>Custom T-shirt</h3>
-        <p>From £8 per shirt</p>
+        <p>From £8 per T-shirt</p>
         <p>Handmade with love</p>
     </div>
     <div class="product">
         <img src="shirt4.jpg" alt="T-shirt 4">
         <h3>Custom T-shirt</h3>
-        <p>From £8 per shirt</p>
+        <p>From £8 per T-shirt</p>
         <p>Handmade with love</p>
     </div>
     <div class="product">
         <img src="shirt5.jpg" alt="T-shirt 5">
         <h3>Custom T-shirt</h3>
-        <p>From £8 per shirt</p>
+        <p>From £8 per T-shirt</p>
         <p>Handmade with love</p>
     </div>
     <div class="product">
         <img src="shirt6.jpg" alt="T-shirt 6">
         <h3>Custom T-shirt</h3>
-        <p>From £8 per shirt</p>
+        <p>From £8 per T-shirt</p>
         <p>Handmade with love</p>
     </div>
 </section>
 
+<!-- Pricing Section -->
 <section id="pricing" class="pricing-info">
     <h2>Pricing</h2>
-    <p>* Suggested retail/resell prices included</p>
 
     <h3>Medium Front Design</h3>
     <table>
@@ -113,8 +148,8 @@
             <th>Quantity</th>
             <th>Price per Shirt (£)</th>
             <th>You Pay (£)</th>
-            <th>Potential Retail Earnings (£12)</th>
-            <th>Potential Retail Earnings (£15)</th>
+            <th>Potential Earnings (£12)</th>
+            <th>Potential Earnings (£15)</th>
         </tr>
         <tr><td>10</td><td>10.00</td><td>100</td><td>20</td><td>50</td></tr>
         <tr><td>20</td><td>9.50</td><td>190</td><td>50</td><td>110</td></tr>
@@ -128,8 +163,8 @@
             <th>Quantity</th>
             <th>Price per Shirt (£)</th>
             <th>You Pay (£)</th>
-            <th>Potential Retail Earnings (£12)</th>
-            <th>Potential Retail Earnings (£15)</th>
+            <th>Potential Earnings (£12)</th>
+            <th>Potential Earnings (£15)</th>
         </tr>
         <tr><td>10</td><td>11.00</td><td>110</td><td>14</td><td>40</td></tr>
         <tr><td>20</td><td>10.50</td><td>210</td><td>30</td><td>90</td></tr>
@@ -138,6 +173,7 @@
     </table>
 </section>
 
+<!-- Contact Section -->
 <section id="contact" class="contact">
     <h2>Contact Oliver Seager</h2>
     <p>Email: <a href="mailto:o.seager@yahoo.co.uk">o.seager@yahoo.co.uk</a></p>
