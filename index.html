@@ -39,23 +39,33 @@
       border-radius: 12px;
       padding: 16px;
       text-align: center;
-      width: 280px;       /* uniform width */
-      height: 260px;      /* uniform height */
+      width: 280px; /* keeps boxes uniform */
+      height: 260px; /* keeps boxes uniform */
       display: flex;
       flex-direction: column;
-      justify-content: space-between; /* evenly spaces content */
+      justify-content: space-between;
     }
 
-    .product-box h3.price {
+    .product-box img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .product-box .price {
       font-size: 1.2rem;
-      margin-bottom: 10px;
+      margin: 8px 0;
       color: #333;
     }
 
-    .product-box .product-text p {
-      margin: 4px 0;
-      font-size: 0.95rem;
+    .product-box .fill-text {
+      font-size: 0.9rem;
       color: #555;
+      line-height: 1.3;
+      text-align: center;
+      max-height: 100%;
+      overflow: hidden;
+      margin: 0 auto;
     }
 
     .product-box .contact {
@@ -71,7 +81,7 @@
       color: #555;
     }
 
-    /* Responsive for mobile */
+    /* Mobile responsiveness */
     @media (max-width: 600px) {
       .product-grid {
         flex-direction: column;
@@ -81,14 +91,14 @@
       }
       .product-box {
         width: 90%;
-        height: auto; /* allows boxes to shrink */
+        height: auto; /* allows shrinking */
         padding: 12px;
       }
-      .product-box h3.price {
+      .product-box .price {
         font-size: 1rem;
       }
-      .product-box .product-text p {
-        font-size: 0.9rem;
+      .product-box .fill-text {
+        font-size: 0.85rem;
       }
       .product-box .contact {
         font-size: 0.85rem;
@@ -104,22 +114,38 @@
 </header>
 
 <main class="product-grid">
-  <!-- Example product box -->
+  <!-- Example Product Box 1 -->
   <div class="product-box">
-    <h3 class="price">From £8 per shirt</h3>
-    <div class="product-text">
+    <img src="shirt1.jpg" alt="T-shirt 1">
+    <p class="price">From £8 per shirt</p>
+    <div class="fill-text">
       <p>100% cotton T-shirts</p>
       <p>Premium DTF printing — vibrant & durable</p>
       <p>High-resolution images recommended (300 DPI)</p>
       <p>Design resizing included at no extra cost</p>
-      <p class="contact">📧 Questions? Email us — we’re happy to help!</p>
     </div>
+    <p class="contact">📧 Questions? Email us — we’re happy to help!</p>
   </div>
 
-  <!-- Duplicate for more products -->
+  <!-- Example Product Box 2 -->
   <div class="product-box">
-    <h3 class="price">From £8 per shirt</h3>
-    <div class="product-text">
+    <img src="shirt2.jpg" alt="T-shirt 2">
+    <p class="price">From £8 per shirt</p>
+    <div class="fill-text">
       <p>100% cotton T-shirts</p>
       <p>Premium DTF printing — vibrant & durable</p>
-      <
+      <p>High-resolution images recommended (300 DPI)</p>
+      <p>Design resizing included at no extra cost</p>
+    </div>
+    <p class="contact">📧 Questions? Email us — we’re happy to help!</p>
+  </div>
+
+  <!-- Add more product boxes as needed, same structure -->
+</main>
+
+<footer>
+  &copy; 2026 Custom T-Shirt Printing. All rights reserved.
+</footer>
+
+</body>
+</html>
