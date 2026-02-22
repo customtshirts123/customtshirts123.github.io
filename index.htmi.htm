@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kotchin Clothing</title>
+
+<style>
+body {
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior:smooth;
+  background:#f5f5f5;
+}
+
+header {
+  background:#000;
+  color:#fff;
+  padding:15px 0;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+nav {
+  display:flex;
+  justify-content:center;
+  gap:40px;
+}
+
+nav a {
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:16px;
+}
+
+nav a:hover {
+  color:#ff9900;
+}
+
+section {
+  padding:60px 20px;
+  max-width:1100px;
+  margin:auto;
+  scroll-margin-top:90px;
+}
+
+h2 {
+  text-align:center;
+  margin-bottom:40px;
+}
+
+/* HERO */
+.hero {
+  text-align:center;
+}
+
+.hero img {
+  max-width:100%;
+  height:auto;
+  border-radius:10px;
+}
+
+/* PRODUCTS */
+.products {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+
+.products img {
+  width:100%;
+  border-radius:10px;
+}
+
+/* PRODUCT INFO BOX */
+.product-info {
+  margin-top:40px;
+  background:#fff;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+  line-height:1.6;
+  font-size:15px;
+}
+
+/* TABLE */
+.table-responsive {
+  width:100%;
+  overflow-x:auto;
+}
+
+table {
+  width:100%;
+  border-collapse:collapse;
+  background:#fff;
+  min-width:500px;
+}
+
+th, td {
+  padding:12px;
+  border:1px solid #ddd;
+  text-align:center;
+}
+
+th {
+  background:#000;
+  color:#fff;
+}
+
+/* CONTACT */
+.contact-box {
+  background:#fff;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+  text-align:center;
+}
+
+/* FOOTER */
+footer {
+  background:#000;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+}
+
+/* MOBILE NAV */
+@media(max-width:768px){
+  nav {
+    gap:20px;
+    font-size:14px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<a href="#home">Home</a>
+<a href="#products">Products</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<!-- HOME -->
+<section id="home" class="hero">
+<img src="poster.jpg" alt="Main Poster">
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+<h2>Our Products</h2>
+
+<div class="products">
+<img src="shirt1.jpg" alt="">
+<img src="shirt2.jpg" alt="">
+<img src="shirt3.jpg" alt="">
+<img src="shirt4.jpg" alt="">
+<img src="shirt5.jpg" alt="">
+<img src="shirt6.jpg" alt="">
+<img src="shirt7.jpg" alt="">
+</div>
+
+<div class="product-info">
+<h3>Want to order custom T-shirts? We’re here to help!</h3>
+
+<p>
+Simply send us your high-resolution image (300 DPI recommended at full print size) to ensure the best possible print quality. 
+Our team will adjust the sizing and prepare your design for print — all included in the price.
+</p>
+
+<p>
+We print on 100% cotton T-shirts using premium DTF (Direct-to-Film) printing, delivering vibrant colors, sharp details, and long-lasting results.
+</p>
+
+<p>
+If you have any questions or need assistance with your design, drop us an email — we’re always happy to help!
+</p>
+</div>
+
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+<h2>Pricing</h2>
+
+<div class="table-responsive">
+<table>
+<tr>
+<th>Quantity</th>
+<th>Medium Print</th>
+<th>Full Print</th>
+</tr>
+<tr>
+<td>1-5</td>
+<td>£12</td>
+<td>£15</td>
+</tr>
+<tr>
+<td>6-10</td>
+<td>£10</td>
+<td>£13</td>
+</tr>
+<tr>
+<td>11+</td>
+<td>£8</td>
+<td>£11</td>
+</tr>
+</table>
+</div>
+
+<p style="margin-top:15px; font-size:14px;">
+*Resale prices may vary.
+</p>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact Us</h2>
+
+<div class="contact-box">
+<p>Email: your@email.com</p>
+<p>© 2026 Kotchin Clothing – trading as Oliver Seager</p>
+</div>
+
+</section>
+
+<footer>
+© 2026 Kotchin Clothing – trading as Oliver Seager
+</footer>
+
+</body>
+</html>
