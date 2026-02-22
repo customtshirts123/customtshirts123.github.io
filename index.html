@@ -4,192 +4,231 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kotchin Clothing</title>
+
 <style>
-html { scroll-behavior: smooth; }
-body { margin:0; font-family: Arial, Helvetica, sans-serif; background:#f4f4f4; color:#333; }
-
-/* --- Landing Page Styles --- */
-#landing {
-  display:flex; flex-direction:column; justify-content:center; align-items:center;
-  height:100vh; text-align:center;
-  background:#f4f4f4;
+body {
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior:smooth;
+  background:#f5f5f5;
 }
-#landing img.logo {
-  width:400px; max-width:90%; margin-bottom:25px;
+
+/* HEADER & NAV */
+header {
+  background:#000;
+  color:#fff;
+  padding:15px 0;
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
-button.enter-btn {
-  padding:15px 35px; font-size:18px; background:#ff9900; color:#fff;
-  border:none; border-radius:10px; cursor:pointer; transition:0.3s;
+nav {
+  display:flex;
+  justify-content:center;
+  gap:40px;
 }
-button.enter-btn:hover { background:#e68a00; }
+nav a {
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:16px;
+}
+nav a:hover {
+  color:#ff9900;
+}
 
-/* --- Main Site Styles --- */
-#main-site { display:none; }
+/* SECTIONS */
+section {
+  padding:60px 20px;
+  max-width:1100px;
+  margin:auto;
+  scroll-margin-top:90px;
+}
 
-header { background:#000; color:#fff; text-align:center; padding:50px 20px; }
-header h1 { margin:0; font-size:32px; }
-nav { background:#111; text-align:center; padding:14px; position:sticky; top:0; z-index:1000; }
-nav a { color:#fff; margin:0 15px; text-decoration:none; font-weight:bold; font-size:16px; }
-nav a:hover { color:#ff9900; }
+h2 {
+  text-align:center;
+  margin-bottom:40px;
+}
 
-/* --- Sections --- */
-section { padding:80px 20px; margin:0 auto; max-width:1200px; box-sizing:border-box; }
-.home-images { display:flex; justify-content:center; align-items:center; gap:30px; flex-wrap:wrap; margin-top:25px; }
-.home-images img.logo { width:160px; height:auto; }
-.home-images img.poster { width:400px; max-width:90%; border-radius:12px; box-shadow:0 12px 30px rgba(0,0,0,0.2); }
+/* HERO */
+.hero {
+  text-align:center;
+}
+.hero img {
+  max-width:100%;
+  height:auto;
+  border-radius:10px;
+}
 
-.hero { background:#ff9900; color:#fff; padding:70px 20px; text-align:center; }
-.hero h2 { font-size:36px; margin-bottom:10px; }
-.hero p { font-size:20px; }
-
-.products-grid {
+/* PRODUCTS */
+.products {
   display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap:30px;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
 }
-.product { background:#fff; padding:20px; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.15); text-align:center; transition:0.3s; }
-.product:hover { transform:translateY(-8px); }
-.product img { width:100%; border-radius:10px; margin-bottom:10px; }
-
-.table-responsive {
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-.table-responsive table {
+.products img {
   width:100%;
-  min-width:500px;
-  border-collapse: collapse;
+  border-radius:10px;
 }
-th, td { border:1px solid #ddd; padding:12px; text-align:center; }
-th { background:#ff9900; color:#fff; }
-tr:nth-child(even) { background:#f9f9f9; }
 
-.contact, .pricing { background:#fff; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.15); padding:40px 25px; margin-bottom:50px; }
+/* PRODUCT INFO BOX */
+.product-info {
+  margin-top:40px;
+  background:#fff;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+  line-height:1.6;
+  font-size:15px;
+}
 
-footer { background:#000; color:#fff; text-align:center; padding:25px; margin-top:40px; font-size:14px; }
+/* TABLES */
+.table-responsive {
+  width:100%;
+  overflow-x:auto;
+}
+table {
+  width:100%;
+  border-collapse:collapse;
+  background:#fff;
+  min-width:500px;
+}
+th, td {
+  padding:12px;
+  border:1px solid #ddd;
+  text-align:center;
+}
+th {
+  background:#000;
+  color:#fff;
+}
 
-/* --- Responsive --- */
+/* CONTACT */
+.contact-box {
+  background:#fff;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+  text-align:center;
+}
+
+/* FOOTER */
+footer {
+  background:#000;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+}
+
+/* MOBILE NAV */
 @media(max-width:768px){
-    .home-images { flex-direction: column; }
-    .home-images img.logo { width:150px; }
-    .home-images img.poster { width:90%; margin:20px 0; }
-    nav a { display:block; margin:8px 0; }
+  nav {
+    gap:20px;
+    font-size:14px;
+  }
 }
 </style>
 </head>
+
 <body>
 
-<!-- Landing Page -->
-<div id="landing">
-<img src="logo.png" class="logo" alt="Kotchin Clothing Logo">
-<h2>Click to Enter</h2>
-<button class="enter-btn" onclick="enterSite()">Enter Site</button>
-</div>
-
-<!-- Main Site -->
-<div id="main-site">
-
 <header>
-<h1>Kotchin Clothing</h1>
-<p>Custom T-Shirts – Handmade with Love</p>
-</header>
-
 <nav>
 <a href="#home">Home</a>
 <a href="#products">Products</a>
 <a href="#pricing">Pricing</a>
 <a href="#contact">Contact</a>
 </nav>
+</header>
 
 <!-- HOME -->
-<section id="home">
-<h2>Welcome to Kotchin Clothing</h2>
-<p>Small or large orders welcome</p>
-
-<div class="home-images">
-<img src="logo.png" class="logo">
-<img src="poster.jpg" class="poster">
-<img src="logo.png" class="logo">
-</div>
-</section>
-
-<!-- HERO -->
-<section class="hero">
-<h2>Custom T-Shirts From £8</h2>
-<p>Your Design • Any Logo • Any Text</p>
+<section id="home" class="hero">
+<img src="poster.jpg" alt="Main Poster">
 </section>
 
 <!-- PRODUCTS -->
-<section id="products" class="products-grid">
-<div class="product"><img src="shirt1.jpg"><p>From £8 per shirt</p></div>
-<div class="product"><img src="shirt2.jpg"><p>From £8 per shirt</p></div>
-<div class="product"><img src="shirt3.jpg"><p>From £8 per shirt</p></div>
-<div class="product"><img src="shirt4.jpg"><p>From £8 per shirt</p></div>
-<div class="product"><img src="shirt5.jpg"><p>From £8 per shirt</p></div>
-<div class="product"><img src="shirt6.jpg"><p>From £8 per shirt</p></div>
+<section id="products">
+<h2>Our Products</h2>
+
+<div class="products">
+<img src="shirt1.jpg" alt="">
+<img src="shirt2.jpg" alt="">
+<img src="shirt3.jpg" alt="">
+<img src="shirt4.jpg" alt="">
+<img src="shirt5.jpg" alt="">
+<img src="shirt6.jpg" alt="">
+<img src="shirt7.jpg" alt="">
+</div>
+
+<div class="product-info">
+<h3>Want to order custom T-shirts? We’re here to help!</h3>
+
+<p>
+Simply send us your high-resolution image (300 DPI recommended at full print size) to ensure the best possible print quality. 
+Our team will adjust the sizing and prepare your design for print — all included in the price.
+</p>
+
+<p>
+We print on 100% cotton T-shirts using premium DTF (Direct-to-Film) printing, delivering vibrant colors, sharp details, and long-lasting results.
+</p>
+
+<p>
+If you have any questions or need assistance with your design, drop us an email — we’re always happy to help!
+</p>
+</div>
+
 </section>
 
 <!-- PRICING -->
-<section id="pricing" class="pricing">
-<h2>Client Pricing & Resale Profit Guide</h2>
+<section id="pricing">
+<h2>Pricing</h2>
 
-<h3>Medium Front Design</h3>
 <div class="table-responsive">
 <table>
 <tr>
 <th>Quantity</th>
-<th>Price per Shirt (£)</th>
-<th>Total Cost (£)</th>
-<th>*Resale Profit at £12</th>
-<th>*Resale Profit at £15</th>
+<th>Medium Print</th>
+<th>Full Print</th>
 </tr>
-<tr><td>10</td><td>10.00</td><td>100</td><td>£20</td><td>£50</td></tr>
-<tr><td>20</td><td>9.50</td><td>190</td><td>£50</td><td>£110</td></tr>
-<tr><td>50</td><td>9.00</td><td>450</td><td>£150</td><td>£300</td></tr>
-<tr><td>100</td><td>8.00</td><td>800</td><td>£400</td><td>£700</td></tr>
+<tr>
+<td>1-5</td>
+<td>£12</td>
+<td>£15</td>
+</tr>
+<tr>
+<td>6-10</td>
+<td>£10</td>
+<td>£13</td>
+</tr>
+<tr>
+<td>11+</td>
+<td>£8</td>
+<td>£11</td>
+</tr>
 </table>
 </div>
 
-<h3>Full Front Design</h3>
-<div class="table-responsive">
-<table>
-<tr>
-<th>Quantity</th>
-<th>Price per Shirt (£)</th>
-<th>Total Cost (£)</th>
-<th>*Resale Profit at £12</th>
-<th>*Resale Profit at £15</th>
-</tr>
-<tr><td>10</td><td>11.00</td><td>110</td><td>£14</td><td>£40</td></tr>
-<tr><td>20</td><td>10.50</td><td>210</td><td>£30</td><td>£90</td></tr>
-<tr><td>50</td><td>10.00</td><td>500</td><td>£100</td><td>£250</td></tr>
-<tr><td>100</td><td>9.00</td><td>900</td><td>£300</td><td>£600</td></tr>
-</table>
-</div>
-<p><strong>*Profit figures are estimates based on resale price.</strong></p>
+<p style="margin-top:15px; font-size:14px;">
+*Resale prices may vary.
+</p>
+
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact">
-<h2>Contact Oliver Seager</h2>
-<p>Email: <a href="mailto:o.seager@yahoo.co.uk">o.seager@yahoo.co.uk</a></p>
-<p>Phone: 07842000083</p>
-<p>Small or large orders welcome</p>
+<section id="contact">
+<h2>Contact Us</h2>
+
+<div class="contact-box">
+<p>Email: your@email.com</p>
+<p>© 2026 Kotchin Clothing – trading as Oliver Seager</p>
+</div>
+
 </section>
 
 <footer>
 © 2026 Kotchin Clothing – trading as Oliver Seager
 </footer>
-</div>
-
-<script>
-function enterSite() {
-    document.getElementById('landing').style.display='none';
-    document.getElementById('main-site').style.display='block';
-    window.scrollTo(0,0);
-}
-</script>
 
 </body>
 </html>
