@@ -14,29 +14,26 @@ body { margin:0; font-family: Arial, Helvetica, sans-serif; background:#f4f4f4; 
   height:100vh; text-align:center;
   background:#f4f4f4;
 }
-
 #landing img.logo {
-  width:400px; /* larger logo */
-  max-width:90%; margin-bottom:25px;
+  width:400px; max-width:90%; margin-bottom:25px;
 }
-
 button.enter-btn {
   padding:15px 35px; font-size:18px; background:#ff9900; color:#fff;
   border:none; border-radius:10px; cursor:pointer; transition:0.3s;
 }
-
 button.enter-btn:hover { background:#e68a00; }
 
 /* --- Main Site Styles --- */
 #main-site { display:none; }
 
-header { background:#000; color:#fff; text-align:center; padding:35px 20px; }
+header { background:#000; color:#fff; text-align:center; padding:50px 20px; }
 header h1 { margin:0; font-size:32px; }
 nav { background:#111; text-align:center; padding:14px; position:sticky; top:0; z-index:1000; }
-nav a { color:#fff; margin:0 20px; text-decoration:none; font-weight:bold; }
+nav a { color:#fff; margin:0 15px; text-decoration:none; font-weight:bold; font-size:16px; }
 nav a:hover { color:#ff9900; }
 
-.home { background:#fff; padding:70px 20px; text-align:center; }
+/* --- Sections --- */
+section { padding:80px 20px; margin:0 auto; max-width:1200px; box-sizing:border-box; }
 .home-images { display:flex; justify-content:center; align-items:center; gap:30px; flex-wrap:wrap; margin-top:25px; }
 .home-images img.logo { width:160px; height:auto; }
 .home-images img.poster { width:400px; max-width:90%; border-radius:12px; box-shadow:0 12px 30px rgba(0,0,0,0.2); }
@@ -45,26 +42,39 @@ nav a:hover { color:#ff9900; }
 .hero h2 { font-size:36px; margin-bottom:10px; }
 .hero p { font-size:20px; }
 
-.products { padding:70px 20px; display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
-.product { background:#fff; width:270px; padding:20px; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.15); text-align:center; transition:0.3s; }
+.products-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap:30px;
+}
+.product { background:#fff; padding:20px; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.15); text-align:center; transition:0.3s; }
 .product:hover { transform:translateY(-8px); }
 .product img { width:100%; border-radius:10px; margin-bottom:10px; }
 
-.pricing { background:#fff; max-width:1150px; margin:50px auto; padding:50px 25px; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.15); }
-.pricing h2 { text-align:center; margin-bottom:30px; }
-table { width:100%; border-collapse:collapse; margin-bottom:40px; }
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.table-responsive table {
+  width:100%;
+  min-width:500px;
+  border-collapse: collapse;
+}
 th, td { border:1px solid #ddd; padding:12px; text-align:center; }
 th { background:#ff9900; color:#fff; }
 tr:nth-child(even) { background:#f9f9f9; }
 
-.contact { background:#fff; max-width:750px; margin:50px auto; padding:50px 20px; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.15); text-align:center; }
+.contact, .pricing { background:#fff; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.15); padding:40px 25px; margin-bottom:50px; }
 
 footer { background:#000; color:#fff; text-align:center; padding:25px; margin-top:40px; font-size:14px; }
 
+/* --- Responsive --- */
 @media(max-width:768px){
     .home-images { flex-direction: column; }
     .home-images img.logo { width:150px; }
     .home-images img.poster { width:90%; margin:20px 0; }
+    nav a { display:block; margin:8px 0; }
 }
 </style>
 </head>
@@ -93,7 +103,7 @@ footer { background:#000; color:#fff; text-align:center; padding:25px; margin-to
 </nav>
 
 <!-- HOME -->
-<section id="home" class="home">
+<section id="home">
 <h2>Welcome to Kotchin Clothing</h2>
 <p>Small or large orders welcome</p>
 
@@ -111,7 +121,7 @@ footer { background:#000; color:#fff; text-align:center; padding:25px; margin-to
 </section>
 
 <!-- PRODUCTS -->
-<section id="products" class="products">
+<section id="products" class="products-grid">
 <div class="product"><img src="shirt1.jpg"><p>From £8 per shirt</p></div>
 <div class="product"><img src="shirt2.jpg"><p>From £8 per shirt</p></div>
 <div class="product"><img src="shirt3.jpg"><p>From £8 per shirt</p></div>
@@ -121,11 +131,11 @@ footer { background:#000; color:#fff; text-align:center; padding:25px; margin-to
 </section>
 
 <!-- PRICING -->
-<section id="pricing">
-<div class="pricing">
+<section id="pricing" class="pricing">
 <h2>Client Pricing & Resale Profit Guide</h2>
 
 <h3>Medium Front Design</h3>
+<div class="table-responsive">
 <table>
 <tr>
 <th>Quantity</th>
@@ -139,8 +149,10 @@ footer { background:#000; color:#fff; text-align:center; padding:25px; margin-to
 <tr><td>50</td><td>9.00</td><td>450</td><td>£150</td><td>£300</td></tr>
 <tr><td>100</td><td>8.00</td><td>800</td><td>£400</td><td>£700</td></tr>
 </table>
+</div>
 
 <h3>Full Front Design</h3>
+<div class="table-responsive">
 <table>
 <tr>
 <th>Quantity</th>
@@ -154,23 +166,20 @@ footer { background:#000; color:#fff; text-align:center; padding:25px; margin-to
 <tr><td>50</td><td>10.00</td><td>500</td><td>£100</td><td>£250</td></tr>
 <tr><td>100</td><td>9.00</td><td>900</td><td>£300</td><td>£600</td></tr>
 </table>
-
-<p><strong>*Profit figures are estimates based on resale price.</strong></p>
 </div>
+<p><strong>*Profit figures are estimates based on resale price.</strong></p>
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
-<div class="contact">
+<section id="contact" class="contact">
 <h2>Contact Oliver Seager</h2>
 <p>Email: <a href="mailto:o.seager@yahoo.co.uk">o.seager@yahoo.co.uk</a></p>
 <p>Phone: 07842000083</p>
 <p>Small or large orders welcome</p>
-</div>
 </section>
 
 <footer>
-© 2026 Kotchin Clothing
+© 2026 Kotchin Clothing – trading as Oliver Seager
 </footer>
 </div>
 
