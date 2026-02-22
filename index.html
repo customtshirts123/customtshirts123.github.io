@@ -1,4 +1,110 @@
-<div class="product-grid">
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom T-Shirt Printing</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+      background: #f4f4f4;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #222;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .product-box {
+      background: #f8f8f8;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      width: 280px;       /* uniform width */
+      height: 260px;      /* uniform height */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* evenly spaces content */
+    }
+
+    .product-box h3.price {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .product-box .product-text p {
+      margin: 4px 0;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .product-box .contact {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #f4f4f4;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* Responsive for mobile */
+    @media (max-width: 600px) {
+      .product-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+      }
+      .product-box {
+        width: 90%;
+        height: auto; /* allows boxes to shrink */
+        padding: 12px;
+      }
+      .product-box h3.price {
+        font-size: 1rem;
+      }
+      .product-box .product-text p {
+        font-size: 0.9rem;
+      }
+      .product-box .contact {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Custom T-Shirt Printing</h1>
+  <p>High-quality cotton T-shirts, vibrant prints, ready to order!</p>
+</header>
+
+<main class="product-grid">
+  <!-- Example product box -->
   <div class="product-box">
     <h3 class="price">From £8 per shirt</h3>
     <div class="product-text">
@@ -10,79 +116,10 @@
     </div>
   </div>
 
+  <!-- Duplicate for more products -->
   <div class="product-box">
     <h3 class="price">From £8 per shirt</h3>
     <div class="product-text">
       <p>100% cotton T-shirts</p>
       <p>Premium DTF printing — vibrant & durable</p>
-      <p>High-resolution images recommended (300 DPI)</p>
-      <p>Design resizing included at no extra cost</p>
-      <p class="contact">📧 Questions? Email us — we’re happy to help!</p>
-    </div>
-  </div>
-
-  <!-- Repeat .product-box as needed for more products -->
-</div>
-
-<style>
-.product-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center; /* centers boxes */
-  margin: 20px 0;
-}
-
-.product-box {
-  background: #f8f8f8;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 16px;
-  text-align: center;
-  width: 280px;      /* fixed width to keep uniform size */
-  height: 260px;     /* fixed height to prevent stretching */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* spreads content evenly */
-}
-
-.product-box h3.price {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.product-box .product-text p {
-  margin: 4px 0;
-  font-size: 0.95rem;
-  color: #555;
-}
-
-.product-box .contact {
-  font-size: 0.9rem;
-  color: #777;
-}
-
-/* Responsive for mobile */
-@media (max-width: 600px) {
-  .product-grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-  .product-box {
-    width: 90%;
-    height: auto; /* allows box to shrink on mobile */
-    padding: 12px;
-  }
-  .product-box h3.price {
-    font-size: 1rem;
-  }
-  .product-box .product-text p {
-    font-size: 0.9rem;
-  }
-  .product-box .contact {
-    font-size: 0.85rem;
-  }
-}
-</style>
+      <
